@@ -1,0 +1,30 @@
+<!--
+Name: Shanie Portal
+Date: 11/05/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/10/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h1>Baking Contest User Information</h1>
+    {% for row in rows %}
+    <b>Name: </b> {{ row['Name'] }} <br>
+    <b>Age: </b> {{ row['Age'] }} <br>
+    <b>Phone number: </b> {{ row['PhNum'] }} <br>
+    <b>Security Role Level: </b>{{ row['SecurityLevel'] }} <br>
+    <b>Login Password: </b>{{ row['Password'] }}
+    {% endfor %}
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

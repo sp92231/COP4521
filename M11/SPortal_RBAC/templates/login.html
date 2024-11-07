@@ -1,0 +1,37 @@
+<!--
+Name: Shanie Portal
+Date: 11/05/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/10/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action = "/login" method = "POST">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+    <h1>Login</h1>
+    <input type="text" id="Username" name="Username" value="" placeholder="username"> <br />
+    <input type="password" id="Password" name="Password" value="" placeholder="password"> <br />
+    <input type="submit" value="Log in">
+
+</form>
+</body>
+</html>

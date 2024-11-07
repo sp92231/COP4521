@@ -1,0 +1,52 @@
+<!--
+Name: Shanie Portal
+Date: 11/05/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/10/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content = "text/html; charset=windows-1252">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li> {{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if session ['logged_in'] %}
+    <h1>Welcome {{ name }} </h1>
+        {% if session['SecurityLevel'] == 1 %}
+            <h2><a href="/mycontestresults"> Show My Contest Entry Results </a></h2>
+            <h2><a href="/enternewcontestentry"> Add New Baking Contest Entry </a></h2>
+        {% endif %}
+
+        {% if session['SecurityLevel'] == 2 %}
+            <h2><a href="/mycontestresults"> Show My Contest Entry Results </a></h2>
+            <h2><a href="/enternewcontestentry"> Add New Baking Contest Entry </a></h2>
+            <h2><a href="/list"> List Baking Contest Users </a></h2>
+        {% endif %}
+
+        {% if session['SecurityLevel'] == 3 %}
+            <h2><a href="/mycontestresults"> Show My Contest Entry Results </a></h2>
+            <h2><a href="/enternewcontestentry"> Add New Baking Contest Entry </a></h2>
+            <h2><a href="/enternewuser"> Add New Baking Contest User </a></h2>
+            <h2><a href="/list"> List Baking Contest Users </a></h2>
+            <h2><a href="/contestresults"> Baking Contest Entry Results </a></h2>
+        {% endif %}
+
+    <h2><a href="/logout">Log Out</a></h2>
+{% endif %}
+</body>
+</html>

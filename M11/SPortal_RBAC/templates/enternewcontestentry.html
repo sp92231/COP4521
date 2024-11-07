@@ -1,0 +1,36 @@
+<!--
+Name: Shanie Portal
+Date: 11/05/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/10/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter New Baking Contest Entry</title>
+</head>
+<body>
+    <h2>Enter New Baking Contest Entry</h2>
+    <form action="{{ url_for('addcontestentry') }}" method="POST">
+        <label for="name">Name of Baking Item:</label><br>
+        <input type="text" id="name" name="NameOfBakingItem" required><br>
+
+        <label for="excellentVotes">Number of Excellent Votes:</label><br>
+        <input type="number" id="excellentVotes" name="NumExcellentVotes" min="0" required><br>
+
+        <label for="okVotes">Number of OK Votes:</label><br>
+        <input type="number" id="okVotes" name="NumOkVotes" min="0" required><br>
+
+        <label for="badVotes">Number of Bad Votes:</label><br>
+        <input type="number" id="badVotes" name="NumBadVotes" min="0" required><br>
+
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

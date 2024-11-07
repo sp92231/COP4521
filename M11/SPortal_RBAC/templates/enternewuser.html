@@ -1,0 +1,44 @@
+<!--
+Name: Shanie Portal
+Date: 11/05/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/10/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter New User</title>
+</head>
+<body>
+    <h2>Enter New User</h2>
+
+    <!-- Only show this form if user has sufficient security level -->
+    {% if session['SecurityLevel'] >= 3 %}
+        <form action="{{ url_for('addrec') }}" method="POST">
+            <label for="Name">Name:</label><br>
+            <input type="text" id="Name" name="Name"><br><br>
+
+            <label for="Age">Age:</label><br>
+            <input type="text" id="Age" name="Age"><br><br>
+
+            <label for="PhoneNumber">Phone Number:</label><br>
+            <input type="text" id="PhoneNumber" name="PhoneNumber"><br><br>
+
+            <label for="SecurityLevel">Security Level:</label><br>
+            <input type="text" id="SecurityLevel" name="SecurityLevel"><br><br>
+
+            <label for="Password">Password:</label><br>
+            <input type="password" id="Password" name="Password"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    {% else %}
+        <p>You do not have the required security level to access this page.</p>
+    {% endif %}
+</body>
+</html>
