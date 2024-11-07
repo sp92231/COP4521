@@ -1,0 +1,38 @@
+<!--
+Name: Shanie Portal
+Date: 11/03/2024
+Assignment: Module 10: Basic Flask Website
+Due Date: 11/03/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content = "text/html; charset=windows-1252">
+</head>
+<body>
+    <h2> <b> Baking Contest User Information </b> </h2>
+    <br>
+    <form action="{{ url_for('addrec') }}" method = "POST">
+        <label> Name: </label><br>
+        <INPUT TYPE = "text" Name = "Name" VALUE = '' SIZE = n MAXLENGTH = n> <br>
+        <label> Age: </label><br>
+        <INPUT TYPE = "int" Name = "Age" VALUE = '' SIZE = n MAXLENGTH = n> <br>
+        <label> Phone Number: </label><br>
+        <INPUT TYPE = "string" Name = "PhoneNumber" VALUE = '' SIZE = n MAXLENGTH = n> <br>
+
+        <label> Security Level: </label><br>
+        <INPUT TYPE = "int" Name = "SecurityLevel" VALUE = '' SIZE = n MAXLENGTH = n> <br>
+
+        <label> Login Password: </label><br>
+        <INPUT TYPE = "password" Name = "Password" VALUE = '' SIZE = n MAXLENGTH = n> <br>
+
+        <br>
+        <INPUT TYPE = "submit" VALUE = "Submit">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--
+Name: Shanie Portal
+Date: 11/03/2024
+Assignment: Module 10: Basic Flask Website
+Due Date: 11/03/2024
+About this project: Develop the database for a small scale real-world applications using third-party Python libraries
+discussed in the course.
+All work below was performed by Shanie Portal
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Baking Contest Results</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>EntryId</td>
+                <td>UserId</td>
+                <td>Name of Baking Item</td>
+                <td>Num Excellent Votes</td>
+                <td>Num Ok Votes</td>
+                <td>Num Bad Votes</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["EntryId"] }}</td>
+                <td>{{ row["UserId"] }}</td>
+                <td>{{ row["NameOfBakingItem"] }}</td>
+                <td>{{ row["NumExcellentVotes"] }}</td>
+                <td>{{ row["NumOkVotes"] }}</td>
+                <td>{{ row["NumBadVotes"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2><a href="/">Back to Home</a></h2>
+</body>
+</html>
